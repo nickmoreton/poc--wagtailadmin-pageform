@@ -7,8 +7,12 @@ tasks:
     command: |
       pip install -r requirements.txt
       python manage.py runserver
+      gp preview $(gp url 8000)/admin
   - name : tests
-    command: python manage.py test
+    command: |
+      gp await-port 8000
+      python manage.py test
+    openMode: split-right
 
 
 
