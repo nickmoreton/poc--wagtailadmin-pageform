@@ -136,10 +136,10 @@ class HomePage(Page):
 
 I don't see any calls been made expect where you expect them to be.
 
-Rin tests: `manage.py test`
+Run tests: `manage.py test`
 
 ## Setup
 
-Do the usual clone and virtual env etc ...
+Do the usual clone and virtual env etc ... or [gitpod](https://gitpod.io/#github.com/nickmoreton/poc--wagtailadmin-pageform)
 
 Admin Login User: `admin` Password: `password`
