@@ -100,10 +100,12 @@ class HomePageForm(WagtailAdminPageForm):
 
     user_owner = forms.ChoiceField(
         choices=user_choices,  # just a reference to the function is enough
+        required=False,
     )
 
     currency = forms.ChoiceField(
         choices=currency_choices,  # just a reference to the function is enough
+        required=False,
     )
 
 
@@ -117,8 +119,8 @@ class HomePage(Page):
     # )
     # The page in gosh is an AbstractEmailForm but that shouldn't make too
     # much of a difference.
-    user_owner = models.CharField(max_length=10)
-    currency = models.CharField(max_length=10)
+    user_owner = models.CharField(max_length=50, blank=True)
+    currency = models.CharField(max_length=50, blank=True)
 
     body = RichTextField(blank=True)
 
@@ -132,3 +134,12 @@ class HomePage(Page):
 
 ```
 
+I don't see any calls been made expect where you expect them to be.
+
+Rin tests: `manage.py test`
+
+## Setup
+
+Do the usual clone and virtual env etc ...
+
+Admin Login User: `admin` Password: `password`
